@@ -1,0 +1,42 @@
+<sly data-sly-use.apisConst="${'com.aem.sprint2.core.core.commons.Constants'}"/>
+<sly data-sly-use.apiLoginNoSso="${'com.aem.sprint2.core.core.components.ComponentApi' @ apiUrl = apisConst.LOGIN_NO_SSO_API}"/>
+<div class="main-wrapper">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="sub-title section text-center padding-top-xxl">
+                        <h3 class="h3 p4 margin-top-l margin-bottom-1">${apiLoginNoSso.apiUrl}</h3>
+                    </div>
+                </div>
+                <div class="col col-md-4 col-sm-6 col-xs-10 col-md-offset-4 col-sm-offset-3 col-xs-offset-1 no-padding-md no-padding-sm">
+                    <form action="${apiLoginNoSso.apiUrl}" method="POST" id="login-form" data-parsley-validate data-login-handle data-url-aem="/bin/sprint2-aem/login">
+                        <div class="form-input section form-base margin-bottom-l">
+                            <label class="form-label margin-bottom-xxs p3 bt2">${ properties.id }</label>
+                            <sly data-sly-test.emptyId="${!properties.emptyId}">
+                                <input type="text" name="userId" placeholder="${properties.idPlaceHolder}"/>
+                            </sly>
+                            <sly data-sly-test.emptyId="${properties.emptyId}">
+                                <input type="text" name="userId" placeholder="${properties.idPlaceHolder}"/>
+                            </sly>
+                        </div>
+                        <div class="form-input section form-base margin-bottom-l">
+                            <label class="form-label margin-bottom-xxs p3 bt2">${properties.password}</label>
+                            <sly data-sly-test.emptyPass="${!properties.emptyPass}">
+                                <input type="password" name="password" placeholder="${properties.passwordPlaceHolder}" autocomplete="off"/>
+                            </sly>
+                            <sly data-sly-test.emptyPass="${properties.emptyPass}">
+                                <input type="password" name="password" placeholder="${properties.passwordPlaceHolder}"/>
+                            </sly>
+                        </div>
+                        <div class="button margin-bottom-l">
+                            <button class="btn btn-default btn-primary validate-login" type="submit">${properties.labelbtn}</button>
+                        </div>
+                        <p id="login-error" class="fieldError label-error"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
