@@ -3,3 +3,4 @@ script.js
 jquery-2.1.4.js
 login-handle.js
 change-dividend-option.js
+bootstrap.js

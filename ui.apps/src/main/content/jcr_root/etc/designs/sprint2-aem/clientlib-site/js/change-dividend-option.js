@@ -1,6 +1,11 @@
 ;(function ($, window, undefined) {
     'use strict';
-    var pluginName = 'change-dividend-option';
+    var pluginName = 'change-dividend-option',
+        path = '/etc/designs/sprint2-aem/clientlib-common/';
+
+    var events = {
+        click: 'click.' + pluginName,
+    };
 
     var serializeObject = function(serializeArray, exceptionArray) {
         var newObj = {},
@@ -25,6 +30,15 @@
         return checkException ? $.extend({}, newObj, exceptionObj) : newObj;
     };
 
+    var createPopup = function(popupObj) {
+        var button = popupObj.confirm ? '<button class="btn btn-default ' + popupObj.confirm.class + ' margin-left-xxs" type="button" data-toggle="modal" data-dismiss="modal" data-id="' + popupObj.confirm.id + '">' + popupObj.confirm.title + '</button>' : '',
+            popup = $('body').find('[data-id=common-popup]');
+        popup.html('<div class="modal-dialog partial-screen-modal-dialog"><div class="modal-content overflow-auto"><div class="modal-header bg-t2"><button class="modal-header-btn pull-left" data-dismiss="modal"><svg class="icon-xs hide-on-fallback" role="img" title="closewhite-glyph"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="'+ path +'icons/icons.svg#closewhite-glyph"></use><image class="icon-fallback" alt="closewhite-glyph" src="'+ path +'closewhite-glyph.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image></svg>  </button><h6 class="w text-center">' + popupObj.title + '</h6></div><div class="modal-container padding-top-xxl content-centering"><p class="content-centering bt2">' + popupObj.description + '</p><div class="margin-bottom-l margin-top-xxl"><button style="margin-left:240px;" class="btn btn-default ' + popupObj.decline.class + '" type="button" data-dismiss="modal" data-id="' + popupObj.decline.id + '">' + popupObj.decline.title + '</button>' + button + '</div></div></div></div>');
+        popup.off('hidden.bs.modal').on('hidden.bs.modal', popupObj.decline.func);
+        popupObj.confirm && $('form').off(events.click, '[data-id=' + popupObj.confirm.id + ']').on(events.click, '[data-id=' + popupObj.confirm.id + ']', popupObj.confirm.func);
+        popup.modal('show');
+    };
+
     function ChangeDividendOption(element, options) {
         this.element = $(element);
         this.options = $.extend({}, $.fn[pluginName].defaults, this.element.data(), options);
@@ -34,8 +48,6 @@
     ChangeDividendOption.prototype = {
         init: function () {
           this.initDOM();
-            console.log(this.devidendOption +' '+ this.paymentFrequency + ' ' + this.paymentMethod);
-
         },
 
         initDOM: function () {
@@ -52,15 +64,12 @@
                 data: JSON.stringify(params),
                 dataType: "json",
                 success: function (response) {
-                    that.devidendOption = response.dividendOption;
-                    that.paymentFrequency = response.paymentFrequency;
-                    that.paymentMethod = response.paymentMethod;
-                console.log('response ',that.devidendOption + that.paymentFrequency + that.paymentMethod);
-                that.passDataToHtml(response.dividendOption, that.paymentFrequency, that.paymentMethod);
+                    that.passDataToHtml(response.dividendOption);
+                    that.checkPremiumDeductions(response.paymentFrequency, response.paymentMethod);
                 }
             })
         },
-		passDataToHtml: function (dividendOption, paymentFrequency, paymentMethod) {
+		passDataToHtml: function (dividendOption) {
             console.log('aaa ', dividendOption);
             switch(dividendOption){
                 case 'Premium Deduction': $('.premium-deductions').addClass('hidden'); break;
@@ -70,6 +79,57 @@
             };
             $('[data-id=existing-dividend-option]').append(dividendOption);
             $('[data-id=policy]').append('P'+document.getElementById('policy-number').value);
+        },
+
+        checkPremiumDeductions: function (paymentFrequency, paymentMethod) {
+            $("form input[name='dividend-option']").change(function () {
+                console.log('option: ', $(this).val());
+                if($(this).val() === 'PDs'){
+                    console.log('paymentFrequency: '+paymentFrequency+' and paymentMethod: '+paymentMethod);
+                    if(paymentFrequency === 'Annual' && paymentMethod === 'GIRO'){
+                        createPopup({
+                            title: 'Please Note',
+                            description: 'To elect for Premium Deductions option, your payment method must not be via GIRO. Please submit a request to terminate GIRO',
+                            decline: {
+                                id: 'ok',
+                                title: 'OK',
+                                class: 'btn-secondary',
+                                func: function () {
+									$("input[type='radio']").prop('checked', false);
+                                }
+                            }
+                        });
+                    };
+                    if(paymentFrequency !== 'Annual' && paymentMethod === 'GIRO'){
+                        createPopup({
+                            title: 'Please Note',
+                            description: 'To elect for Premium Deductions option, your payment mode must be on annual mode and payment method must not be via GIRO. Please submit a request to change payment mode and terminate GIRO',
+                            decline: {
+                                id: 'ok',
+                                title: 'OK',
+                                class: 'btn-secondary',
+                                func: function () {
+									$("input[type='radio']").prop('checked', false);
+                                }
+                            }
+                        });
+                    };
+                    if(paymentFrequency !== 'Annual' && paymentMethod !== 'GIRO'){
+                        createPopup({
+                            title: 'Please Note',
+                            description: 'To elect for Premium Deductions option, your payment mode must be on annual mode. Please submit a request to change payment mode',
+                            decline: {
+                                id: 'ok',
+                                title: 'OK',
+                                class: 'btn-secondary',
+                                func: function () {
+									$("input[type='radio']").prop('checked', false);
+                                }
+                            }
+                        });
+                    };
+                };
+            });
         },
 
         destroy: function () {
