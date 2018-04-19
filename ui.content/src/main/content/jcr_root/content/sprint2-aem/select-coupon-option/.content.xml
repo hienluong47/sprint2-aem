@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:cloudserviceconfigs="[[]]"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:designPath="/etc/designs/sprint2-aem/vanessa"
+        cq:lastModified="{Date}2018-04-09T16:10:22.717+07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/sprint2-aem/templates/coupon-option"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="POS0008"
+        sling:resourceType="sprint2-aem/components/structure/pos0008"/>
+</jcr:root>

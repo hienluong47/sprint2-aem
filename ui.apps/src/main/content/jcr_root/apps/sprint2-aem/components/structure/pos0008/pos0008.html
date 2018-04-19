@@ -1,0 +1,31 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.all @ categories='cq.jquery, sprint2-aem.vanessa'}" data-sly-unwrap/>
+<div class="container">
+<form class="coupon-form" id="coupon-form">
+    <h2>Coupon Option</h2>
+    <input type="text" id="coupon_type" class="form-control" value="" readonly>
+    <input type="hidden" id="coupon_id" value=""/>
+    <hr/>
+	<div class="existing-coupon">
+    	Existing coupon option: <span id="coupon" class="coupon-option-info"> </span>
+	</div>
+
+    <p>Change the Coupon Option for all future coupons due on my policy above to:</p>
+	<div id="cash-payout" style="display:none">
+        <label class="radio-container">Cash Payout
+            <input type="radio" name="option" id="cash" value="cash">
+            <span class="checkmark"></span>
+        </label>
+	</div>
+	<div id="accumulations" style="display:none">
+        <label class="radio-container">Coupon Accumulations (Coupon Deposit Account)
+            <input type="radio" name="option" id="deposit" value="deposit">
+            <span class="checkmark"></span>
+        </label>
+	</div>
+
+    <div><button class="btn btn-lg btn-primary btn-block" id="submit" onclick="myFunction(event)">Submit</button><div>
+
+    <div id="errordiv"></div>
+
+</form>
+</div>
