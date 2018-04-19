@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Template"
+    jcr:title="Login Page Template"
+    allowedPaths="[/content(/.*)?]"
+    ranking="{Long}110">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="sprint2-aem/components/structure/loginpage">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sprint2-aem/components/content/login"
+            emptyId="Please enter ID."
+            emptyPass="Please enter Password."
+            id="ID"
+            idPlaceHolder="Enter ID"
+            incorrectIdAndPass="Your account is invalid."
+            labelbtn="LOGIN"
+            password="Password"
+            passwordPlaceHolder="Enter Password"
+            title="LOGIN TO POS EZ"/>
+        <footer-comp
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sprint2-aem/components/content/footer"
+            copyright="Copyright © 2017 AIA Group Limited and its subsidiaries. All rights reserved.">
+            <links jcr:primaryType="nt:unstructured">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    linkLabel="Terms of Use"
+                    linkPath="http://www.aia.com.sg/en/index/terms-of-use.html"
+                    target="_blank"/>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    linkLabel="AIA Personal Data Policy (Singapore)"
+                    linkPath="http://www.aia.com.sg/en/index/terms-of-use.html"
+                    target="_blank"/>
+            </links>
+        </footer-comp>
+    </jcr:content>
+</jcr:root>

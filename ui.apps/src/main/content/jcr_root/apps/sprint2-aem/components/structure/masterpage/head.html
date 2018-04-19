@@ -1,0 +1,19 @@
+<head
+    data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    
+    <sly data-sly-include="favicon.html" />
+    </sly>
+    
+    <sly data-sly-call="${clientlib.css @ categories='sprint2-aem.all'}"
+        data-sly-unwrap />
+    <sly data-sly-use.logic="redirect.js">
+        <meta http-equiv="refresh" content="0;url=${logic.redirectTarget}" data-sly-test="${logic.redirectTarget}" />
+    </sly>
+    <sly data-sly-test.templatePath="${properties.cq:template}"/>
+    <!--/* Include Adobe Dynamic Tag Management libraries for the header */-->
+    <sly
+        data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" />
+    <!--/* Initializes the Experience Manager authoring UI */-->
+    <sly data-sly-include="/libs/wcm/core/components/init/init.jsp" />
+	<link rel="icon" href="icons/favicon.ico" type="image/x-icon" sizes="16x16">
+</head>

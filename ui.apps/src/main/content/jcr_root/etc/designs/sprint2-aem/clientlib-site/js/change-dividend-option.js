@@ -1,5 +1,6 @@
 ;(function ($, window, undefined) {
     'use strict';
+    console.log('here');
     var pluginName = 'change-dividend-option',
         path = '/etc/designs/sprint2-aem/clientlib-common/';
 

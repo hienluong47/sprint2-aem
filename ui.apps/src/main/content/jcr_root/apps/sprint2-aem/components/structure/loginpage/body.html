@@ -1,0 +1,133 @@
+<body class="login-pages" >
+<div class="modal fade" data-id="common-popup"></div>
+<div class="log-out modal fade" data-id="idle-logout-modal">
+  <div class="modal-dialog partial-screen-modal-dialog">
+    <div class="modal-content overflow-auto">
+      <div class="modal-header bg-t2">
+        <button class="modal-header-btn pull-left" data-dismiss="modal">
+          <svg class="icon-xs hide-on-fallback" role="img" title="closewhite-glyph">                
+            <image class="icon-fallback" alt="closewhite-glyph" src="/etc/designs/sprint2-aem/clientlib-common/icons/closewhite-glyph.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+          </svg>
+        </button>
+        <h6 class="w text-center">LOGOUT</h6>
+      </div>
+      <div class="modal-container padding-top-xxl content-centering">
+        <p class="content-centering bt2">Your current session is about to expire. Click on extend to continue.</p>
+        <div class="margin-bottom-l margin-top-xxl">
+          <button class="btn btn-default btn-secondary" type="button" data-dismiss="modal" data-id="confirm-idle">EXTEND</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="log-out modal fade" data-id="logout-confirm-modal">
+  <div class="modal-dialog partial-screen-modal-dialog">
+    <div class="modal-content overflow-auto">
+      <div class="modal-header bg-t2">
+        <button class="modal-header-btn pull-right" data-dismiss="modal">
+          <svg class="icon-xs hide-on-fallback" role="img" title="closewhite-glyph">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc/designs/sprint2-aem/clientlib-common/icons/icons.svg#closewhite-glyph"></use>
+            <image class="icon-fallback" alt="closewhite-glyph" src="/etc/designs/sprint2-aem/clientlib-common/icons/closewhite-glyph.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+          </svg>
+        </button>
+        <h6 class="w text-center">LOGOUT</h6>
+      </div>
+      <div class="modal-container padding-top-xxl content-centering">
+        <p class="content-centering bt2">You are logged out now!</p>
+        <div class="margin-bottom-l margin-top-xxl">
+          <button class="btn btn-default btn-secondary" type="button" data-dismiss="modal">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="log-out modal fade" id="logout-modal">
+  <div class="modal-dialog partial-screen-modal-dialog">
+    <div class="modal-content overflow-auto">
+      <div class="modal-header bg-t2">
+        <button class="modal-header-btn pull-left" data-dismiss="modal">
+          <svg class="icon-xs hide-on-fallback" role="img" title="closewhite-glyph">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc/designs/sprint2-aem/clientlib-common/icons/icons.svg#closewhite-glyph"></use>
+            <image class="icon-fallback" alt="closewhite-glyph" src="/etc/designs/sprint2-aem/clientlib-common/icons/closewhite-glyph.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+          </svg>
+        </button>
+        <h6 class="w text-center">LOGOUT</h6>
+      </div>
+      <div class="modal-container padding-top-xxl content-centering">
+        <p class="content-centering bt2">Are you sure to logout?</p>
+        <div class="margin-bottom-l margin-top-xxl">
+          <button class="btn btn-default btn-secondary" type="button" data-dismiss="modal">CANCEL</button>
+          <button class="btn btn-default btn-primary" type="button" data-toggle="modal" data-dismiss="modal" data-id="logout-btn">LOGOUT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<header data-header-bar data-logout-request data-logout-url="/bin/logout" data-path="login.html" data-assets="./">
+  <div class="topnav global-nav parbase">
+    <div class="navbar navbar-default navbar-fixed">
+      <div class="navbar-slim">
+        <div class="navbar-title-slim">AIA</div>
+      </div>
+      <div class="navbar-one"><a class="navbar-brand" href="/">
+              <svg class="icon-s hide-on-fallback visible-xs-inline-block" role="img" title="aiawhite-logo">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc/designs/sprint2-aem/clientlib-common/icons/icons.svg#aiawhite-logo"></use>
+                <image class="icon-fallback" alt="aiawhite-logo" src="/etc/designs/sprint2-aem/clientlib-common/images/aiawhite-logo.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+              </svg><img class="navbar-brand-img hidden-xs" src="/etc/designs/sprint2-aem/clientlib-common/images/logos/aia-logo-lockup-2x.png" alt="logo"></a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="main-wrapper" data-footer-fix style="min-height: 757px; margin-top: 100px;">
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="sub-title section padding-top-xxl text-center">
+            <h3 class="h3 p4 margin-top-l margin-bottom-l">LOGIN TO POS EZ</h3>
+          </div>
+        </div>
+        <div class="col col-md-4 col-sm-6 col-xs-10 col-md-offset-4 col-sm-offset-3 col-xs-offset-1 no-padding-md no-padding-sm no-padding-xs" style="padding-left:65px;">
+			<form action="http://localhost:3000/aia-ws/user/loginNoSso" method="GET" id="login-form" data-parsley-validate data-login-handle data-url-aem="/bin/sprint2-aem/login">
+                            <div class="form-input section form-base margin-bottom-l">
+                                <label class="form-label margin-bottom-xxs p3 bt2">ID</label>
+                                <sly data-sly-test.emptyId="${!properties.emptyId}">
+                                    <input type="text" name="userId" placeholder="Enter ID"/>
+                                </sly>
+                                <sly data-sly-test.emptyId="${properties.emptyId}">
+                                    <input type="text" name="userId" placeholder="Enter ID"/>
+                                </sly>
+                            </div>
+                            <div class="form-input section form-base margin-bottom-l">
+                                <label class="form-label margin-bottom-xxs p3 bt2">Password</label>
+                                <sly data-sly-test.emptyPass="${!properties.emptyPass}">
+                                    <input type="password" name="password" placeholder="Enter Password" autocomplete="off"/>
+                                </sly>
+                                <sly data-sly-test.emptyPass="${properties.emptyPass}">
+                                    <input type="password" name="password" placeholder="Enter Password"/>
+                                </sly>
+                            </div>
+                            <div class="button margin-bottom-l">
+                                <button class="btn btn-default btn-primary validate-login" type="submit" style="min-width:250px !important;">LOGIN</button>
+                            </div>
+                            <p id="login-error" class="fieldError label-error"></p>
+                        </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<footer class="footer">
+  <div class="container bg-b8">
+    <div class="text-center padding-top-xs padding-bottom-xs">
+      <p class="b5 bt5">Copyright � 2017 AIA Group Limited and its subsidiaries. All rights reserved.</p>
+    </div>
+  </div>
+  <div class="container bg-b9">
+    <div class="text-center padding-top-xs padding-bottom-xs"><a class="b5 bt5" href="http://www.aia.com.sg/en/index/terms-of-use.html">Terms of Use</a><span class="b5 link-seperator"> |</span><a class="b5 bt5" href="http://www.aia.com.sg/en/index/personal-data-policy.html"> AIA Personal Data Policy (Singapore)</a></div>
+  </div>
+</footer>
+<!--[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+<noscript>JavaScript is off. Please enable to view full site.</noscript>
+<div data-sly-include="foot.html" data-sly-unwrap="${!wcmmode.edit}"></div>
+</body>

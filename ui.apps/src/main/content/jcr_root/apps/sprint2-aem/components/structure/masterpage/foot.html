@@ -1,0 +1,8 @@
+<!--/* Custom Footer Libs */-->
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+	<sly data-sly-call="${clientlib.js @ categories='sprint2-aem.all'}" data-sly-unwrap/>
+</div>
+
+
+<!--/* Include Adobe Dynamic Tag Management libraries for the footer */-->
+<sly data-sly-resource="${@ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"/>

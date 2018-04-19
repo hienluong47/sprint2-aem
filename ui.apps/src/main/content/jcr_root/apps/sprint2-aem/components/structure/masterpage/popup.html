@@ -1,0 +1,64 @@
+<div class="log-out modal fade" data-id="idle-logout-modal">
+      <div class="modal-dialog partial-screen-modal-dialog">
+        <div class="modal-content overflow-auto">
+          <div class="modal-header bg-t2">
+            <button class="modal-header-btn pull-left" data-dismiss="modal">
+              <svg class="icon-xs hide-on-fallback" role="img" title="closewhite-glyph">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc/designs/aia-sg-stp/clientlib/icons/icons.svg#closewhite-glyph"></use>
+                <image class="icon-fallback" alt="closewhite-glyph" src="/etc/designs/aia-sg-stp/clientlib/icons/closewhite-glyph.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+              </svg>
+            </button>
+            <h6 class="w text-center">LOGOUT</h6>
+          </div>
+          <div class="modal-container padding-top-xxl content-centering">
+            <p class="content-centering bt2">Your current session is about to expire. Click on extend to continue.</p>
+            <div class="margin-bottom-l margin-top-xxl">
+              <button class="btn btn-default btn-secondary" type="button" data-dismiss="modal" data-id="confirm-idle">EXTEND</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="log-out modal fade" data-id="logout-confirm-modal">
+      <div class="modal-dialog partial-screen-modal-dialog">
+        <div class="modal-content overflow-auto">
+          <div class="modal-header bg-t2">
+            <button class="modal-header-btn pull-right" data-dismiss="modal">
+              <svg class="icon-xs hide-on-fallback" role="img" title="closewhite-glyph">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc/designs/aia-sg-stp/clientlib/icons/icons.svg#closewhite-glyph"></use>
+                <image class="icon-fallback" alt="closewhite-glyph" src="/etc/designs/aia-sg-stp/clientlib/icons/closewhite-glyph.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+              </svg>
+            </button>
+            <h6 class="w text-center">LOGOUT</h6>
+          </div>
+          <div class="modal-container padding-top-xxl content-centering">
+            <p class="content-centering bt2">You are logged out now!</p>
+            <div class="margin-bottom-l margin-top-xxl">
+              <button class="btn btn-default btn-secondary" type="button" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="log-out modal fade" id="logout-modal">
+      <div class="modal-dialog partial-screen-modal-dialog">
+        <div class="modal-content overflow-auto">
+          <div class="modal-header bg-t2">
+            <button class="modal-header-btn pull-left" data-dismiss="modal">
+              <svg class="icon-xs hide-on-fallback" role="img" title="closewhite-glyph">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc/designs/aia-sg-stp/clientlib/icons/icons.svg#closewhite-glyph"></use>
+                <image class="icon-fallback" alt="closewhite-glyph" src="/etc/designs/aia-sg-stp/clientlib/icons/closewhite-glyph.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+              </svg>
+            </button>
+            <h6 class="w text-center">LOGOUT</h6>
+          </div>
+          <div class="modal-container padding-top-xxl content-centering">
+            <p class="content-centering bt2">Are you sure to logout?</p>
+            <div class="margin-bottom-l margin-top-xxl">
+              <button class="btn btn-default btn-secondary" type="button" data-dismiss="modal">CANCEL</button>
+              <button class="btn btn-default btn-primary ${isPOSRequestTemplate ? 'save-draft':''}" type="button" data-toggle="modal" data-dismiss="modal" data-id="logout-btn">LOGOUT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

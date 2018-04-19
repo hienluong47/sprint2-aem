@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-04-16T13:56:31.940+07:00"
+        cq:lastModified="{Date}2018-04-19T11:28:16.130+07:00"
         cq:lastModifiedBy="admin"
         jcr:primaryType="nt:unstructured"
         jcr:title="English"
@@ -25,30 +25,43 @@
                 jcr:title="Service Component"
                 sling:resourceType="sprint2-aem/components/content/title"
                 type="h2"/>
+            <change_dividend_opti
+                jcr:created="{Date}2018-04-19T08:49:01.849+07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-04-19T08:49:01.849+07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="sprint2-aem/components/content/change-dividend-option"
+                btnLabel="NEXT"
+                cashPayout="Cash Payout"
+                dividendAccumulations="Dividend Accumulations"
+                paidUpAddition="Paid-up Addition"
+                premiumDeductions="Premium Deductions"
+                title="Dividend Option"/>
             <servicecomponent
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="sprint2-aem/components/content/helloworld"/>
+            <title_1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Lorem ipsum"
+                sling:resourceType="sprint2-aem/components/content/title"
+                type="h2"/>
             <login
-                jcr:created="{Date}2018-04-16T13:56:31.938+07:00"
+                jcr:created="{Date}2018-04-19T11:28:15.949+07:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-04-16T13:56:31.938+07:00"
+                jcr:lastModified="{Date}2018-04-19T11:28:15.949+07:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="sprint2-aem/components/content/login"
                 emptyId="Please enter ID"
                 emptyPass="Please enter password"
                 id="ID"
-                idPlaceHolder="Enter ID"
+                idPlaceHolder="Enter"
                 incorrectIdAndPass="Incorrect Username or Password"
                 labelbtn="LOGIN"
                 password="Password"
                 passwordPlaceHolder="Enter Password"
                 title="LOGIN TO POS EZ"/>
-            <title_1
-                jcr:primaryType="nt:unstructured"
-                jcr:title="Lorem ipsum"
-                sling:resourceType="sprint2-aem/components/content/title"
-                type="h2"/>
             <text
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="sprint2-aem/components/content/text"

@@ -1,7 +1,7 @@
-<div class="main-wrapper">
-	<section>
-        <div class="container">
-            <div class="row">
+
+
+        <div class="container" style="min-height:867px;">
+            <div class="row" style="margin-top:100px;">
                 <div class="col-sm-4 padding-left-xs padding-right-xs">
                   <div class="customer-left margin-bottom-l" data-id="customer-info" data-customer-lbl="CUSTOMER" data-policy-id-lbl="POLICY ID" data-policy-owner-lbl="POLICY OWNER">
                   </div>
@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-sm-8 padding-left-xs padding-right-xs">
                     <div class="sub-title section padding-top-xxl margin-bottom-s">
-                        <h6 class="h6 margin-bottom-xxl"><strong>Devidend Option</strong></h6>
+                        <h6 class="h6 margin-bottom-xxl"><strong>${properties.title}</strong></h6>
 						<p data-id="policy" class="bt8">Personal Accident Policy </p>
                     </div>
                     <hr/>
@@ -25,34 +25,32 @@
                                 <p data-id="existing-dividend-option" class="margin-top-l margin-bottom-l">Existing Dividend Option: </p>
                                 <p class="bt8">Change the Dividend Option on my policy above with effect from the NEXT policy anniversary to:</p>
                             </div>
-							<div class="margin-bottom-s">
-                                <label class="premium-deductions bt8 padding-bottom-l">
-                                    <input type="radio" name="dividend-option" value="PDs"/><span>Premium Deductions</span>
+							<div >
+                                <label class="premium-deductions bt8 padding-bottom-l radio-button">
+                                    <input type="radio" name="dividend-option" value="PDs"/><span class="indicator"></span><span class="bt3">${properties.premiumDeductions}</span>
                                 </label>
                             </div>
-                            <div class="margin-bottom-s">
-                                <label class="paid-up-addition bt8 padding-bottom-l">
-                                    <input type="radio" name="dividend-option" value="PUA"/><span>Paid-up Addition</span>
+                            <div >
+                                <label class="paid-up-addition bt8 padding-bottom-l radio-button">
+                                    <input type="radio" name="dividend-option" value="PUA"/><span class="indicator"></span><span class="bt3">${properties.paidUpAddition}</span>
                                 </label>
                             </div>
-                            <div class="margin-bottom-s">
-                                <label class="dividend-accumulations bt8 padding-bottom-l">
-                                    <input type="radio" name="dividend-option" value="DAs"/><span>Dividend Accumulations</span>
+                            <div >
+                                <label class="dividend-accumulations bt8 padding-bottom-l radio-button">
+                                    <input type="radio" name="dividend-option" value="DAs"/><span class="indicator"></span><span class="bt3">${properties.dividendAccumulations}</span>
                                 </label>
                             </div>
-                            <div class="margin-bottom-s">
-                                <label class="cash-payout bt8 padding-bottom-l">
-                                    <input type="radio" name="dividend-option" value="CP"/><span>Cash Payout</span>
+                            <div >
+                                <label class="cash-payout bt8 padding-bottom-l radio-button">
+                                    <input type="radio" name="dividend-option" value="CP"/><span class="indicator"></span><span class="bt3">${properties.cashPayout}</span>
                                 </label>
                             </div>
                             <div class="button margin-bottom-l">
-                                <button class="btn btn-default btn-primary" type="submit">Next</button>
+                                <button class="btn btn-default btn-primary" type="submit">${properties.btnLabel}</button>
                             </div>
-                            <div class="modal fade" data-id="common-popup"></div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-</div>
+

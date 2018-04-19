@@ -1,0 +1,65 @@
+<p style="text-align: center; color: black;" data-sly-test="${wcmmode.edit}">Header Component</p>
+
+<header data-sly-test="${!properties.mobile}" data-header-bar data-logout-request data-logout-servlet="/bin/aia-sg-stp/logout" data-logout-api="" data-idle="12"
+        data-assets="/etc/designs/sprint2-aem/clientlib-common" data-login-path="" data-timeout="300000">
+    <div class="topnav global-nav parbase">
+        <div class="navbar navbar-default navbar-fixed">
+            <div class="navbar-slim">
+                <div class="navbar-title-slim">AIA</div>
+            </div>
+            <div class="navbar-one">
+                <a class="navbar-brand" data-id="${isPOSRequestTemplate ? 'save-draft':''}" href="${apiHelper.homePath}">
+                    <svg
+                            class="icon-s hide-on-fallback visible-xs-inline-block" role="img"
+                            title="aiawhite-logo">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="/etc/designs/sprint2-aem/clientlib-common/icons/icons.svg#aiawhite-logo"></use>
+                        <image class="icon-fallback" alt="aiawhite-logo"
+                               src="/etc/designs/sprint2-aem/clientlib-common/images/logos/aiawhite-logo.png"
+                               xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+                    </svg>
+                    <img class="navbar-brand-img hidden-xs"
+                         src="/etc/designs/sprint2-aem/clientlib-common/images/logos/aia-logo-lockup-2x.png" alt="logo"></a>
+                <ul class="nav navbar-tools pull-right hidden">
+                    <li class="dropdown" data-id="search-btn">
+                        <div class="dropdown-toggle">
+                            <div class="navbar-tool-label">
+                                <a data-id="${isPOSRequestTemplate ? 'save-draft':''}" href="${apiHelper.searchPath}">
+                                    <svg class="icon-xs hide-on-fallback"
+                                         role="img" title="search-nav">
+                                        <use
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                xlink:href="/etc/designs/sprint2-aem/clientlib-common/icons/icons.svg#search-nav"></use>
+                                        <image class="icon-fallback"
+                                               alt="search-nav" src="/etc/designs/sprint2-aem/clientlib-common/icons/search-nav.png"
+                                               xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown navbar-search-btn" data-id="signout-btn">
+                        <div class="dropdown-toggle">
+                            <div class="navbar-tool-label">
+                                <a data-toggle="modal" data-target="#logout-modal">
+                                    <svg
+                                            class="icon-xs hide-on-fallback" role="img"
+                                            title="signout-menu">
+                                        <use
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                xlink:href="/etc/designs/sprint2-aem/clientlib-common/icons/icons.svg#signout-menu"></use>
+                                        <image class="icon-fallback"
+                                               alt="signout-menu"
+                                               src="/etc/designs/sprint2-aem/clientlib-common/icons/signout-menu.png"
+                                               xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-fixed-spacer"></div>
+    </div>
+</header>

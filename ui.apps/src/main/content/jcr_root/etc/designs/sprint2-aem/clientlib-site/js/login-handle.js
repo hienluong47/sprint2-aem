@@ -49,7 +49,6 @@
             $.ajax({
                 url: that.element.attr('action'),
                 type: 'GET',
-                dataType: 'json',
                 success: function (response) {
                     that.messageError.text('');
                     if(response.statusCode === 200) {
@@ -78,7 +77,7 @@
 
             $.ajax({
                 url: that.element.data('url-aem'),
-                type: that.element.attr('method'),
+                type: 'POST',
                 data: JSON.stringify(params),
                 dataType: 'json',
                 contentType: 'application/json',

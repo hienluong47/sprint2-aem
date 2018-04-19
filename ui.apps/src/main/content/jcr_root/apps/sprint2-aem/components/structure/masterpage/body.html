@@ -1,0 +1,14 @@
+<sly data-sly-test.templatePath="${properties.cq:template}"/>
+<body>
+
+    <div data-sly-include="popup.html" data-sly-unwrap="${!wcmmode.edit}"></div>
+	<div data-sly-include="header.html" data-sly-unwrap="${!wcmmode.edit}"></div>
+	 <div class="main-wrapper" data-footer-fix>
+		<sly data-sly-include="content.html" data-sly-unwrap="${!wcmmode.edit}"></sly>
+	</div>
+
+
+	<div data-sly-include="footer.html" data-sly-unwrap="${!wcmmode.edit}"></div>
+	<div data-sly-include="foot.html" data-sly-unwrap="${!wcmmode.edit}"></div>
+	//<div class="modal fade" data-id="common-popup"></div>
+</body>

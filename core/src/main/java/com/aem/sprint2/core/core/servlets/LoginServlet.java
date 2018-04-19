@@ -48,7 +48,7 @@ public class LoginServlet extends SlingAllMethodsServlet{
             LOG.info("TEST ------------ " + resultObject);
             String statusCode = StringUtils.replaceEach(resultObject.getString(Constants.STATUS_CODE), new String[] {"\n", "\r"}, new String[] {"", ""});
             jsonResponse.put(Constants.STATUS_CODE, Constants.SUCCESS_CODE);
-            jsonResponse.put("url", "/content/aia-sg-stp/loginsso.html");
+            jsonResponse.put("url", "/content/sprint2-aem/change-dividend-option.html");
 
             LOG.info("TEST ------------response " + jsonResponse.toString());
 
