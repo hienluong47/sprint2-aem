@@ -6,9 +6,9 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
 @ObjectClassDefinition(name = "Sprint2AEM - Application Configuration", description = "This contains all application configuration")
 public @interface AppConfig {
-    @AttributeDefinition(name = "address.api",description = "Domain",type = AttributeType.STRING)
+    @AttributeDefinition(name = "address.api",description = "Domain",type = AttributeType.STRING,required = true)
     String getAddressApi() default "http://localhost:3000/aia-ws";
 
-    @AttributeDefinition(name = "home.path", description = "Home path to redirect", type = AttributeType.STRING)
+    @AttributeDefinition(name = "home.path", description = "Home path to redirect", type = AttributeType.STRING, required = true)
     String getHomePath() default "/content/aia-sg-stp/loginsso.html";
 }

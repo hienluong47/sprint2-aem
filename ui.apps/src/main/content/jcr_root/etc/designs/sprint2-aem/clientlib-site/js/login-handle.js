@@ -77,7 +77,7 @@
 
             $.ajax({
                 url: that.element.data('url-aem'),
-                type: 'POST',
+                type: that.element.data('method'),
                 data: JSON.stringify(params),
                 dataType: 'json',
                 contentType: 'application/json',

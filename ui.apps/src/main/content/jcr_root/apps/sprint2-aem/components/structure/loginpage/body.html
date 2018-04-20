@@ -1,3 +1,5 @@
+<sly data-sly-use.apisConst="${'com.aem.sprint2.core.core.commons.Constants'}"/>
+<sly data-sly-use.apiLoginNoSso="${'com.aem.sprint2.core.core.components.ComponentApi' @ apiUrl = apisConst.LOGIN_NO_SSO_API}"/>
 <body class="login-pages" >
 <div class="modal fade" data-id="common-popup"></div>
 <div class="log-out modal fade" data-id="idle-logout-modal">
@@ -84,34 +86,24 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="sub-title section padding-top-xxl text-center">
-            <h3 class="h3 p4 margin-top-l margin-bottom-l">LOGIN TO POS EZ</h3>
+            <h3 class="h3 p4 margin-top-l margin-bottom-l">${properties.title}</h3>
           </div>
         </div>
         <div class="col col-md-4 col-sm-6 col-xs-10 col-md-offset-4 col-sm-offset-3 col-xs-offset-1 no-padding-md no-padding-sm no-padding-xs" style="padding-left:65px;">
 			<form action="http://localhost:3000/aia-ws/user/loginNoSso" method="GET" id="login-form" data-parsley-validate data-login-handle data-url-aem="/bin/sprint2-aem/login">
-                            <div class="form-input section form-base margin-bottom-l">
-                                <label class="form-label margin-bottom-xxs p3 bt2">ID</label>
-                                <sly data-sly-test.emptyId="${!properties.emptyId}">
-                                    <input type="text" name="userId" placeholder="Enter ID"/>
-                                </sly>
-                                <sly data-sly-test.emptyId="${properties.emptyId}">
-                                    <input type="text" name="userId" placeholder="Enter ID"/>
-                                </sly>
-                            </div>
-                            <div class="form-input section form-base margin-bottom-l">
-                                <label class="form-label margin-bottom-xxs p3 bt2">Password</label>
-                                <sly data-sly-test.emptyPass="${!properties.emptyPass}">
-                                    <input type="password" name="password" placeholder="Enter Password" autocomplete="off"/>
-                                </sly>
-                                <sly data-sly-test.emptyPass="${properties.emptyPass}">
-                                    <input type="password" name="password" placeholder="Enter Password"/>
-                                </sly>
-                            </div>
-                            <div class="button margin-bottom-l">
-                                <button class="btn btn-default btn-primary validate-login" type="submit" style="min-width:250px !important;">LOGIN</button>
-                            </div>
-                            <p id="login-error" class="fieldError label-error"></p>
-                        </form>
+                <div class="form-input section form-base margin-bottom-l">
+                    <label class="form-label margin-bottom-xxs p3 bt2">ID</label>
+                    <input type="text" name="userId" placeholder="Enter ID"/>
+                </div>
+                <div class="form-input section form-base margin-bottom-l">
+                    <label class="form-label margin-bottom-xxs p3 bt2">Password</label>
+                    <input type="password" name="password" placeholder="Enter Password"/>
+                </div>
+                <div class="button margin-bottom-l">
+                    <button class="btn btn-default btn-primary validate-login" type="submit" style="min-width:250px !important;">LOGIN</button>
+                </div>
+                <p id="login-error" class="fieldError label-error"></p>
+            </form>
         </div>
       </div>
     </div>

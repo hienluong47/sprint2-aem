@@ -1,56 +1,54 @@
-
-
-        <div class="container" style="min-height:867px;">
-            <div class="row" style="margin-top:100px;">
-                <div class="col-sm-4 padding-left-xs padding-right-xs">
-                  <div class="customer-left margin-bottom-l" data-id="customer-info" data-customer-lbl="CUSTOMER" data-policy-id-lbl="POLICY ID" data-policy-owner-lbl="POLICY OWNER">
-                  </div>
-                  <div class="select-list" data-id="list-select-request" data-url="data/form.json" data-form-url="data/mapping-data.json" data-method="GET">
-                    <p class="h5 margin-bottom-s customer-title">SELECTED ITEMS</p>
-                  </div>
-                  <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="save-and-draft">SAVE AS DRAFT</button>
-                  <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="cancel-request">CANCEL POS Request</button>
-                  <button class="btn btn-default btn-primary btn-service margin-bottom-xs" type="button">GO TO FILE ATTACHMENT</button>
-                </div>
-                <div class="col-sm-8 padding-left-xs padding-right-xs">
-                    <div class="sub-title section padding-top-xxl margin-bottom-s">
-                        <h6 class="h6 margin-bottom-xxl"><strong>${properties.title}</strong></h6>
-						<p data-id="policy" class="bt8">Personal Accident Policy </p>
+<div class="container" style="min-height:867px;">
+    <div class="row" style="margin-top:100px;">
+        <div class="col-sm-4 padding-left-xs padding-right-xs">
+          <div class="customer-left margin-bottom-l" data-id="customer-info" data-customer-lbl="CUSTOMER" data-policy-id-lbl="POLICY ID" data-policy-owner-lbl="POLICY OWNER">
+          </div>
+          <div class="select-list" data-id="list-select-request" data-url="data/form.json" data-form-url="data/mapping-data.json" data-method="GET">
+            <p class="h5 margin-bottom-s customer-title">SELECTED ITEMS</p>
+          </div>
+          <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="save-and-draft">SAVE AS DRAFT</button>
+          <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="cancel-request">CANCEL POS Request</button>
+          <button class="btn btn-default btn-primary btn-service margin-bottom-xs" type="button">GO TO FILE ATTACHMENT</button>
+        </div>
+        <div class="col-sm-8 padding-left-xs padding-right-xs">
+            <div class="sub-title section padding-top-xxl margin-bottom-s">
+                <h6 class="h6 margin-bottom-xxl"><strong>${properties.title}</strong></h6>
+                <p data-id="policy" class="bt8">Personal Accident Policy </p>
+            </div>
+            <hr/>
+            <div class="">
+                <form action="" method="POST" data-change-dividend-option>
+                    <input type="hidden" value="12654354" id="policy-number"/>
+                    <div class="margin-bottom-s">
+                        <p data-id="existing-dividend-option" class="margin-top-l margin-bottom-l">Existing Dividend Option: </p>
+                        <p class="bt8">Change the Dividend Option on my policy above with effect from the NEXT policy anniversary to:</p>
                     </div>
-                    <hr/>
-                    <div class="">
-						<form action="" method="POST" data-change-dividend-option>
-                            <input type="hidden" value="12654354" id="policy-number"/>
-                            <div class="margin-bottom-s">
-                                <p data-id="existing-dividend-option" class="margin-top-l margin-bottom-l">Existing Dividend Option: </p>
-                                <p class="bt8">Change the Dividend Option on my policy above with effect from the NEXT policy anniversary to:</p>
-                            </div>
-							<div >
-                                <label class="premium-deductions bt8 padding-bottom-l radio-button">
-                                    <input type="radio" name="dividend-option" value="PDs"/><span class="indicator"></span><span class="bt3">${properties.premiumDeductions}</span>
-                                </label>
-                            </div>
-                            <div >
-                                <label class="paid-up-addition bt8 padding-bottom-l radio-button">
-                                    <input type="radio" name="dividend-option" value="PUA"/><span class="indicator"></span><span class="bt3">${properties.paidUpAddition}</span>
-                                </label>
-                            </div>
-                            <div >
-                                <label class="dividend-accumulations bt8 padding-bottom-l radio-button">
-                                    <input type="radio" name="dividend-option" value="DAs"/><span class="indicator"></span><span class="bt3">${properties.dividendAccumulations}</span>
-                                </label>
-                            </div>
-                            <div >
-                                <label class="cash-payout bt8 padding-bottom-l radio-button">
-                                    <input type="radio" name="dividend-option" value="CP"/><span class="indicator"></span><span class="bt3">${properties.cashPayout}</span>
-                                </label>
-                            </div>
-                            <div class="button margin-bottom-l">
-                                <button class="btn btn-default btn-primary" type="submit">${properties.btnLabel}</button>
-                            </div>
-                        </form>
+                    <div >
+                        <label class="premium-deductions bt8 padding-bottom-l radio-button">
+                            <input type="radio" name="dividend-option" value="PDs"/><span class="indicator"></span><span class="bt3">${properties.premiumDeductions}</span>
+                        </label>
                     </div>
-                </div>
+                    <div >
+                        <label class="paid-up-addition bt8 padding-bottom-l radio-button">
+                            <input type="radio" name="dividend-option" value="PUA"/><span class="indicator"></span><span class="bt3">${properties.paidUpAddition}</span>
+                        </label>
+                    </div>
+                    <div >
+                        <label class="dividend-accumulations bt8 padding-bottom-l radio-button">
+                            <input type="radio" name="dividend-option" value="DAs"/><span class="indicator"></span><span class="bt3">${properties.dividendAccumulations}</span>
+                        </label>
+                    </div>
+                    <div >
+                        <label class="cash-payout bt8 padding-bottom-l radio-button">
+                            <input type="radio" name="dividend-option" value="CP"/><span class="indicator"></span><span class="bt3">${properties.cashPayout}</span>
+                        </label>
+                    </div>
+                    <div class="button margin-bottom-l">
+                        <button class="btn btn-default btn-primary" type="submit">${properties.btnLabel}</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
+</div>
 
