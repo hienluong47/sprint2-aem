@@ -3,4 +3,4 @@
     jcr:description="The core page component for the POS061"
     jcr:primaryType="cq:Component"
     jcr:title="Base Content Page"
-    sling:resourceSuperType="wcm/foundation/components/page"/>
+    sling:resourceSuperType="sprint2-aem/components/structure/masterpage"/>

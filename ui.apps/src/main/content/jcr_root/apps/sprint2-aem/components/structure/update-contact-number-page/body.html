@@ -1,5 +1,3 @@
-<sly data-sly-use.apisConst="${'com.aem.sprint2.core.core.commons.Constants'}"/>
-<sly data-sly-use.apiLoginNoSso="${'com.aem.sprint2.core.core.components.ComponentApi' @ apiUrl = apisConst.LOGIN_NO_SSO_API}"/>
 <body class="login-pages" >
 <div class="modal fade" data-id="common-popup"></div>
 <div class="log-out modal fade" data-id="idle-logout-modal">
@@ -84,27 +82,54 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12">
-          <div class="sub-title section padding-top-xxl text-center">
-            <h3 class="h3 p4 margin-top-l margin-bottom-l">LOGIN TO POS EZ</h3>
+      	<div class="col-sm-4 padding-left-xs padding-right-xs">
+          <div class="customer-left margin-bottom-l" data-id="customer-info" data-customer-lbl="CUSTOMER" data-policy-id-lbl="POLICY ID" data-policy-owner-lbl="POLICY OWNER">
           </div>
+          <div class="select-list" data-id="list-select-request" data-url="data/form.json" data-form-url="data/mapping-data.json" data-method="GET">
+            <p class="h5 margin-bottom-s customer-title">SELECTED ITEMS</p>
+          </div>
+          <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="save-and-draft">SAVE AS DRAFT</button>
+          <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="cancel-request">CANCEL POS Request</button>
+          <button class="btn btn-default btn-primary btn-service margin-bottom-xs" type="button">GO TO FILE ATTACHMENT</button>
         </div>
-        <div class="col col-md-4 col-sm-6 col-xs-10 col-md-offset-4 col-sm-offset-3 col-xs-offset-1 no-padding-md no-padding-sm no-padding-xs" style="padding-left:65px;">
-			<form action="http://localhost:3000/aia-ws/user/loginNoSso" method="POST" id="login-form" data-parsley-validate data-login-handle data-url-aem="/bin/sprint2-aem/login">
-                <div class="form-input section form-base margin-bottom-l">
-                    <label class="form-label margin-bottom-xxs p3 bt2">ID</label>
-                    <input type="text" name="userId" placeholder="Enter ID"/>
-                </div>
-                <div class="form-input section form-base margin-bottom-l">
-                    <label class="form-label margin-bottom-xxs p3 bt2">Password</label>
-                    <input type="password" name="password" placeholder="Enter Password"/>
-                </div>
-                <div class="button margin-bottom-l">
-                    <button class="btn btn-default btn-primary validate-login" type="submit" style="min-width:250px !important;">LOGIN</button>
-                </div>
-                <p id="login-error" class="fieldError label-error"></p>
-            </form>
-        </div>
+		<div class="col-sm-8 padding-left-xs padding-right-xs">
+            <div class="sub-title section padding-top-xxl margin-bottom-s">
+                <p class="margin-bottom-sm"><strong>Update Contact Number for 2FA</strong></p>
+            </div>
+            <hr/>
+            <div>
+                <p class="margin-bottom-xs">Please enter your new mobile number for 2FA Authentication</p>
+                      <div class=" col-md-4" style="padding-left:0px;padding-right:15px;">
+                            <label class=" bt3">Country Code</label>
+                            <select class="primary-select select-large full-width margin-top-xs" id="rider" data-parsley-required="true" data-parsley-error-message="Please select choose." data-id="select-btn">
+                              <option value="" disabled="" data-option-placeholder="">Select one</option>
+                              <option value="+64">+64</option>
+                    		  <option value="+65">+65</option>
+                              <option value="+89">+89</option>
+                              <option value="+84">+84</option>
+                            </select>
+                  	  </div>
+                      <div class="col-md-4" style="padding-left:0px;">
+                        <label class=" bt3">Area Code</label>
+                        <input type="text" class="form-control margin-top-xs" id="areaCode">
+                      </div>
+                      <div class="col-md-4" style="padding-left:10px;">
+                        <label class=" bt3">Mobile Number</label>
+                        <input type="text" class="form-control margin-top-xs" id="mobileNumber">
+                      </div>
+                      <div style="margin-top:100px;">
+						<button id="btnSubmit" type="button" class="btn btn-primary">Submit</button>
+                      </div>
+			<!-- test here -->
+
+            <div id="contentRes" style="display: none;">
+                <h4>Phone Saved Details</h4>
+                <p>Id: <span id="phoneId"></span></p>
+                <p>Country Code: <span id="phoneCountryCode"></span></p>
+                <p>Area Code: <span id="phoneAreaCode"></span></p>
+                <p>Mobile Number: <span id="phoneMobileNumber"></span></p>
+            </div>
+		</div>  
       </div>
     </div>
   </section>

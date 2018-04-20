@@ -3,9 +3,9 @@
     jcr:description="Update Contact Number for 2FA"
     jcr:primaryType="cq:Template"
     jcr:title="POS061"
-    allowedPaths="[/content(./*)?]"
+    allowedPaths="[/content(/.*)?]"
     ranking="{Long}1">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="sprint2-aem/components/structure/contentpage"/>
+        sling:resourceType="sprint2-aem/components/structure/update-contact-number-page"/>
 </jcr:root>
