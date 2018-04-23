@@ -1,3 +1,4 @@
 #base=css
 style.css
 libs.css
+select2.min.css

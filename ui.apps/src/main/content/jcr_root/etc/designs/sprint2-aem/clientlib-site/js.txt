@@ -4,3 +4,6 @@ jquery-2.1.4.js
 login-handle.js
 change-dividend-option.js
 bootstrap.js
+update-contact-number.js
+pos.js
+select2.min.js

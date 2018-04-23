@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    console.log('update');
                 $('#btnSubmit').on('click', function() {
                     var countryCode = $('#countryCode').val();
                     var areaCode = $('#areaCode').val();

@@ -74,10 +74,10 @@
 
         loginResponse: function (params) {
             var that = this;
-
+			console.log('method '+that.element.data('method'));
             $.ajax({
                 url: that.element.data('url-aem'),
-                type: that.element.data('method'),
+                type: that.element.attr('method'),
                 data: JSON.stringify(params),
                 dataType: 'json',
                 contentType: 'application/json',

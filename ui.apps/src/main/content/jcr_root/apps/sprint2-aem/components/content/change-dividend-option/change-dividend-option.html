@@ -18,7 +18,7 @@
             <hr/>
             <div class="">
                 <form action="" method="POST" data-change-dividend-option>
-                    <input type="hidden" value="12654354" id="policy-number"/>
+                    <input type="hidden" value="${request.requestParameterMap['policyId'][0].toString}" id="policy-number"/>
                     <div class="margin-bottom-s">
                         <p data-id="existing-dividend-option" class="margin-top-l margin-bottom-l">Existing Dividend Option: </p>
                         <p class="bt8">Change the Dividend Option on my policy above with effect from the NEXT policy anniversary to:</p>

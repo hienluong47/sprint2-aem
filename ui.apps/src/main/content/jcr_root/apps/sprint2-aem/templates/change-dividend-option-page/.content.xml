@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:description="Change Dividend Option Template"
     jcr:primaryType="cq:Template"
-    jcr:title="Change Dividend Option"
+    jcr:title="Sprint2 AEM Change Dividend Option"
     allowedPaths="[/content(/.*)?]"
     ranking="{Long}110">
     <jcr:content

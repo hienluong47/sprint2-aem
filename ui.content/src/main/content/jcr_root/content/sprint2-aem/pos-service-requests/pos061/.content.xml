@@ -2,10 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-04-20T14:44:00.192+07:00"
+        cq:lastModified="{Date}2018-04-23T11:18:03.428+07:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/sprint2-aem/templates/update-contact-number-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="POS061"
+        jcr:title="Update Contact Number"
         sling:resourceType="sprint2-aem/components/structure/update-contact-number-page"/>
 </jcr:root>

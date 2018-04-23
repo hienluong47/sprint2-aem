@@ -42,8 +42,11 @@ $.ajax({
 	type: 'GET',    
     url:'http://localhost:3000/agents/A01',    
     success: function(response){
-    	$.each(response, function(i, item){
-			sp_dropdown.append($('<option></option>').attr('value', item.polNo).text(item.polNo));
+        console.log('sp response ', response);
+    	$.each(response.portfolio, function(i, item){
+            console.log('item: ', item);
+            let htmlStr = "<option value='"+ item.policyNumber +"'>"+ item.policyNumber +"</option>";
+			sp_dropdown.append(htmlStr);
     	});
         $(document).ready(function() {
             sp_dropdown.select2({
@@ -65,3 +68,4 @@ $("button").click(function() {
 		window.top.location.href = '/content/sprint2-aem/pos-service-requests/' + pos_sr + '.html?policyId=' + policyId;
     }
 })
+

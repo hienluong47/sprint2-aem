@@ -1,0 +1,38 @@
+<div class="container" style="min-height: 867px;">
+	<div class="row">
+		<div class="col-xs-12 margin-top-sm-6xl margin-bottom-sm-6xl">
+			<h3 class="text-center"
+				data-id="welcome" 
+				data-welcome-string="">Welcome User</h3>
+		</div>
+	</div>
+    <div class="col-sm-4 padding-left-xs padding-right-xs">
+          <div class="customer-left margin-bottom-l" data-id="customer-info" data-customer-lbl="CUSTOMER" data-policy-id-lbl="POLICY ID" data-policy-owner-lbl="POLICY OWNER">
+          </div>
+          <div class="select-list" data-id="list-select-request" data-url="data/form.json" data-form-url="data/mapping-data.json" data-method="GET">
+            <p class="h5 margin-bottom-s customer-title">SELECTED ITEMS</p>
+          </div>
+          <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="save-and-draft">SAVE AS DRAFT</button>
+          <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="cancel-request">CANCEL POS Request</button>
+          <button class="btn btn-default btn-primary btn-service margin-bottom-xs" type="button">GO TO FILE ATTACHMENT</button>
+        </div>
+	<div class="col-sm-8 padding-left-xs padding-right-xs">
+        <div class="sub-title section padding-top-xxl margin-bottom-s">
+                <h6 class="h6 margin-bottom-xxl"><strong>POS Service Request</strong></h6>
+                <p data-id="policy" class="bt8">Please select policy that you want to apply your service request </p>
+        </div>
+		<div class="row">
+			<div class="col-xs-12">
+                <form>
+					<div class="margin-bottom-l">
+                        <select id="pos-dropdown"></select>
+                        <select id="sp-dropdown"style="width:40%"></select>
+					</div>
+                    <div class="button margin-bottom-l col-sm-7 col-sm-push-5" style="margin-left:20px;">
+                        <button class="btn btn-default btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+			</div>
+		</div>
+	</div>
+</div>

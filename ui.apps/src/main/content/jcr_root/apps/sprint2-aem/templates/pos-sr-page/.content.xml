@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:description="Update Contact Number for 2FA"
     jcr:primaryType="cq:Template"
-    jcr:title="Sprint2 AEM POS061"
+    jcr:title="Sprint2 AEM POS Service Request"
     allowedPaths="[/content(/.*)?]"
-    ranking="{Long}1">
+    ranking="{Long}100">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="sprint2-aem/components/structure/update-contact-number-page"/>
+        sling:resourceType="sprint2-aem/components/structure/pos-sr-page"/>
 </jcr:root>
