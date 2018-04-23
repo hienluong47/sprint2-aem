@@ -3,7 +3,7 @@
         <div class="col-sm-4 padding-left-xs padding-right-xs">
           <div class="customer-left margin-bottom-l" data-id="customer-info" data-customer-lbl="CUSTOMER" data-policy-id-lbl="POLICY ID" data-policy-owner-lbl="POLICY OWNER">
           </div>
-          <div class="select-list" data-id="list-select-request" data-url="data/form.json" data-form-url="data/mapping-data.json" data-method="GET">
+          <div class="select-list" data-id="list-select-request" data-url="data/form.json" data-form-url="" data-method="GET">
             <p class="h5 margin-bottom-s customer-title">SELECTED ITEMS</p>
           </div>
           <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="save-and-draft">SAVE AS DRAFT</button>
@@ -17,30 +17,20 @@
             </div>
             <hr/>
             <div class="">
-                <form action="" method="POST" data-change-dividend-option>
+                <form action="" method="POST" data-coupon-option>
                     <input type="hidden" value="${request.requestParameterMap['policyId'][0].toString}" id="policy-number"/>
                     <div class="margin-bottom-s">
-                        <p data-id="existing-dividend-option" class="margin-top-l margin-bottom-l">Existing Dividend Option: </p>
-                        <p class="bt8">Change the Dividend Option on my policy above with effect from the NEXT policy anniversary to:</p>
+                        <p data-id="existing-coupon-option" class="margin-top-l margin-bottom-l">Existing coupon option: </p>
+                        <p class="bt8">Change the Coupon Option for all future coupons due on my policy above to:</p>
                     </div>
                     <div >
-                        <label class="premium-deductions bt8 padding-bottom-l radio-button">
-                            <input type="radio" name="dividend-option" value="PDs"/><span class="indicator"></span><span class="bt3">${properties.premiumDeductions}</span>
-                        </label>
-                    </div>
-                    <div >
-                        <label class="paid-up-addition bt8 padding-bottom-l radio-button">
-                            <input type="radio" name="dividend-option" value="PUA"/><span class="indicator"></span><span class="bt3">${properties.paidUpAddition}</span>
-                        </label>
-                    </div>
-                    <div >
-                        <label class="dividend-accumulations bt8 padding-bottom-l radio-button">
-                            <input type="radio" name="dividend-option" value="DAs"/><span class="indicator"></span><span class="bt3">${properties.dividendAccumulations}</span>
+                        <label class="coupon-accumulations bt8 padding-bottom-l radio-button">
+                            <input type="radio" name="coupon-option" value="CAs"/><span class="indicator"></span><span class="bt3">Coupon Accumulations (Coupon Deposit Account)</span>
                         </label>
                     </div>
                     <div >
                         <label class="cash-payout bt8 padding-bottom-l radio-button">
-                            <input type="radio" name="dividend-option" value="CP"/><span class="indicator"></span><span class="bt3">${properties.cashPayout}</span>
+                            <input type="radio" name="coupon-option" value="CP"/><span class="indicator"></span><span class="bt3">Cash Payout</span>
                         </label>
                     </div>
                     <div class="button margin-bottom-l col-sm-7 col-sm-push-7">

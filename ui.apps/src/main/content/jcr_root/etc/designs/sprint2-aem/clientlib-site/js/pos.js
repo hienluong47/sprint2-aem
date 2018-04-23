@@ -59,6 +59,7 @@ $.ajax({
 
 // Submite button
 $("button").click(function() {
+    console.log('pos submit');
     let pos_sr		= pos_dropdown.val().toLowerCase();
     let policyId	= sp_dropdown.val();
 

@@ -6,4 +6,5 @@ change-dividend-option.js
 bootstrap.js
 update-contact-number.js
 pos.js
+coupon-option.js
 select2.min.js

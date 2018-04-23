@@ -2,6 +2,7 @@
     'use strict';
     console.log('here');
     var pluginName = 'change-dividend-option',
+        pos_sr_url = '/content/sprint2-aem/pos-service-requests.html',
         path = '/etc/designs/sprint2-aem/clientlib-common/';
 
     var events = {
@@ -48,8 +49,24 @@
     
     ChangeDividendOption.prototype = {
         init: function () {
-          this.initDOM();
-          this.getPolicy();
+            var that = this;
+            that.initDOM();
+            that.getPolicy();
+            that.element.submit(function (e) {
+               e.preventDefault();
+               createPopup({
+                   title: '',
+                   description: 'Update successfully',
+                   decline: {
+                       id: 'ok',
+                       title: 'OK',
+                       class: 'btn-secondary',
+                       func: function () {
+                           window.location.href = pos_sr_url;
+                       }
+                   }
+               });
+            });
         },
 
         initDOM: function () {},

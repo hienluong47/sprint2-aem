@@ -16,6 +16,12 @@ $(document).ready(function() {
                                 $('#phoneAreaCode').text(data.data.areaCode);
                                 $('#phoneMobileNumber').text(data.data.mobileNumber);
                                 $('#contentRes').slideDown();
+                                alert('Update Successfully: {' +
+                                    'ID : ' + data.data.id +
+                                    ' Country Code : ' + data.data.countryCode +
+                                    ' Area Code : ' + data.data.areaCode +
+                                    ' Mobile Number : ' + data.data.mobileNumber);
+                                window.location.href = "/content/sprint2-aem/pos-service-requests.html";
                             } else {
                                 $('#contentRes').slideUp();
                                 alert("Not found...");

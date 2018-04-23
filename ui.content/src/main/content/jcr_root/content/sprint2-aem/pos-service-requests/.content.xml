@@ -10,4 +10,5 @@
         sling:resourceType="sprint2-aem/components/structure/pos-sr-page"/>
     <pos009/>
     <pos061/>
+    <pos008/>
 </jcr:root>
