@@ -42,9 +42,7 @@ $.ajax({
 	type: 'GET',    
     url:'http://localhost:3000/agents/A01',    
     success: function(response){
-        console.log('sp response ', response);
     	$.each(response.portfolio, function(i, item){
-            console.log('item: ', item);
             let htmlStr = "<option value='"+ item.policyNumber +"'>"+ item.policyNumber +"</option>";
 			sp_dropdown.append(htmlStr);
     	});

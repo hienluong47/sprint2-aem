@@ -1,0 +1,59 @@
+<div class="container" style="min-height:867px;">
+    <div class="row" style="margin-top:100px;">
+        <div class="col-sm-4 padding-left-xs padding-right-xs">
+            <div class="customer-left margin-bottom-l" data-id="customer-info" data-customer-lbl="CUSTOMER" data-policy-id-lbl="POLICY ID" data-policy-owner-lbl="POLICY OWNER">
+            </div>
+            <div class="select-list" data-id="list-select-request" data-url="data/form.json" data-form-url="data/mapping-data.json" data-method="GET">
+                <p class="h5 margin-bottom-s customer-title">SELECTED ITEMS</p>
+            </div>
+            <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="save-and-draft">SAVE AS DRAFT</button>
+            <button class="btn btn-default btn-secondary btn-service margin-bottom-xs" type="button" data-id="cancel-request">CANCEL POS Request</button>
+            <button class="btn btn-default btn-primary btn-service margin-bottom-xs" type="button">GO TO FILE ATTACHMENT</button>
+        </div>
+        <div class="col-sm-8 padding-left-xs padding-right-xs">
+            <div class="sub-title section padding-top-xxl margin-bottom-s">
+                <h6 class="h6 margin-bottom-xxl"><strong>Increase Face Amount of Basic Plan/Rider(s)/Supplementary Benefit(s)</strong></h6>
+                <p data-id="policy" class="bt8">AIA Personal Policy </p>
+            </div>
+            <hr/>
+            <div class="row">
+                <form action="" method="POST" data-increase-sum-assured>
+                    <input type="hidden" value="${request.requestParameterMap['policyId'][0].toString}" id="policy-number"/>
+                    <div>
+                        <div class="col-sm-6 margin-top-xxl">
+                            <label class="form-label margin-bottom-xxs bt3"><span>Basic Plan/Rider(s) /Supplementary Benefit(s)</span></label>
+                            <select class="primary-select select-large full-width" id="rider" data-parsley-required="true" data-parsley-error-message="Please select choose." data-id="select-btn">
+                                <option value="" disabled="" data-option-placeholder="">Select one</option>
+                                <option value="AIA Greater China Fund">AIA Greater China Fund</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 margin-top-xxl">
+                            <label class="form-label margin-bottom-xxs bt3" ><span>New Sum Assured</span></label>
+                            <div class="input-group-custom">
+                                <span class="bt3 padding-right-xxs input-group-addon-custom" style="color:#a19f9f"><i>SGD</i></span>
+                                <input class="sgd-input" id="input-sum-basic" type="text" name="cash-value" placeholder="93.00">
+                                <a class="btn-add-field pull-right" href="#" title="Add Field" data-id="add-block"><span>+</span></a>
+                            </div>
+                            <div class="margin-top-xs margin-left-xxs" style="color:#a19f9f">Existing Sum Assured: SGD <span id="existing-sum-basic"></span>.00</div>
+                            <div>
+                                <label class="label-error hidden" id="sum-basic-error">
+									Amount must be more than Current Sum Assured and less than 'Product Max Sum Assured Limit'
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-id="add-raider"></div>
+                    <div class="col-sm-8">
+                        <p class="bt8"><i>Note:</i></p>
+                        <p class="bt8"><i>1) This is not applicable for AIA Platinum Legacy Preserver Series</i></p>
+                        <p class="bt8"><i>2) Please also submit the FHR and Product Summary</i></p>
+                    </div>
+                    <div class="button margin-top-l col-sm-7 col-sm-push-7" style="margin-left:40px;">
+                        <button class="btn btn-default btn-primary" type="submit" id="btn-next">NEXT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

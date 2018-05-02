@@ -1,6 +1,5 @@
 ;(function ($, window, undefined) {
     'use strict';
-    console.log('here');
     var pluginName = 'change-dividend-option',
         pos_sr_url = '/content/sprint2-aem/pos-service-requests.html',
         path = '/etc/designs/sprint2-aem/clientlib-common/';
@@ -74,7 +73,6 @@
         getPolicy: function () {
             var that = this,
                 params = serializeObject(that.element.serializeArray());
-            console.log('policy-number: ', document.getElementById('policy-number').value);
             $.ajax({
                 url: "http://localhost:3000/policies/"+document.getElementById('policy-number').value,
                 type: "GET",
@@ -102,7 +100,6 @@
             $("form input[name='dividend-option']").change(function () {
                 console.log('option: ', $(this).val());
                 if($(this).val() === 'PDs'){
-                    console.log('paymentFrequency: '+paymentFrequency+' and paymentMethod: '+paymentMethod);
                     if(paymentFrequency === 'Annual' && paymentMethod === 'GIRO'){
                         createPopup({
                             title: 'Please Note',

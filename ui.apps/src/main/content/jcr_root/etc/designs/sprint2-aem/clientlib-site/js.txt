@@ -8,3 +8,4 @@ update-contact-number.js
 pos.js
 coupon-option.js
 select2.min.js
+increase-sum-assured.js

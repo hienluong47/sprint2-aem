@@ -2,14 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-04-23T11:05:18.882+07:00"
+        cq:lastModified="{Date}2018-04-24T15:18:06.404+07:00"
         cq:lastModifiedBy="admin"
-        cq:template="/apps/sprint2-aem/templates/pos-sr-page"
+        cq:template="/apps/sprint2-aem/templates/increase-sum-assured-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="POS Service Request"
-        sling:resourceType="sprint2-aem/components/structure/pos-sr-page"/>
-    <pos009/>
-    <pos061/>
-    <pos008/>
-    <pos033/>
+        jcr:title="Increase Sum Assured"
+        sling:resourceType="sprint2-aem/components/structure/increase-sum-assured-page"/>
 </jcr:root>
